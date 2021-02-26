@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioPlayer</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="./icons/iconfinder_music_115710.png">
+</head>
+
+
+<body id='body'>
+<br><br>
+    <audio id='audio'>
+        <source src="./audio/Celtic Music - For the King.mp3" type="audio/mp3">
+    </audio>
+<div id='controls'>
+    
+    <img id='playBtn' class='' onclick='playAudio()'  src="./icons/iconfinder_btn_Play_4698916.png">
+    <img id="pauseBtn" class=' hide' onclick="pauseAudio()" src="./icons/iconfinder_btn_Pause_4719317.png">
+    <div style="display: inline;">
+        <label id="timer" class="center" for="progress" role="timer"></label>
+        <progress id="progress"  class="center" max="100" value="1">Progress</progress>
+    </div>
+        <img id='volumeBtn' class='btn' onclick='showVolume()' src="./icons/songIcon/iconfinder_btn_Volume_100_4698930.png">
+        <img id='fwrd15' class='btn' onclick='bckrd15Btn()' src="./icons/iconfinder_btn_15_Forward_4719305.png">
+        <img id='bckrd15' class='btn' onclick='fwrd15Btn()' src="./icons/iconfinder_btn_15_Backward_4719304.png">
+        <img id='bckrd' class='btn' onclick='fwrdBtn()' src="./icons/iconfinder_btn_Backward_4698906.png">
+        <img id='fwrd' class='btn' onclick='bckrdBtn()' src="./icons/iconfinder_btn_Forward_4698910.png">
+        <img id='loop' class='btn' onclick='loopBtn()' src="./icons/iconfinder_btn_Repeat_4698918.png">
+        <img id='stop' class='btn' onclick='stopBtn()'  src="./icons/iconfinder_btn_Stop_4698925.png">
+        <br>
+        <input oninput='changeVolume()'  id='volumeBar' class = 'hide' value = '100' type='range' min='0' max="100"> 
+        <span id='counter' class="hide"></span>
+</div>
+
+
+
+</body>
+
+<script src="script.js"></script>
+</html>

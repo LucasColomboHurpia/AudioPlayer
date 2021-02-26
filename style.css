@@ -1,0 +1,66 @@
+body{background-color: rgb(121, 118, 118);
+background-image: url(https://scx2.b-cdn.net/gfx/news/hires/2019/4-space.jpg);
+background-repeat: repeat-y;
+background-size: 100%;}
+*{font-family: Arial, Helvetica, sans-serif;}
+
+#controls{
+    overflow: auto;
+
+    position: relative;
+    margin: auto;
+    text-align: center;
+    display: block;
+
+    width:fit-content;
+    top: 150px;;
+
+    background-color: rgb(18, 18, 20);
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.hide{display: none;}
+
+.btn{
+    margin-top: 1%;
+    width: 50px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.btn:hover{background-color: rgb(192, 192, 192);}
+
+.center {
+    text-align: center;
+    float: left;
+    margin-top: 4%;
+    margin-left: 10px;
+}
+#progress{ margin-right: 5px;}
+#timer{margin-right: 0px; color: cornsilk;}
+#playBtn{float:left; width: 65px;cursor: pointer;background-color: rgb(255, 255, 255); border-radius: 100%;}
+#playBtn:hover{background-color: rgb(192, 192, 192);}
+#pauseBtn{float:left;width: 65px; cursor: pointer;background-color: rgb(255, 255, 255); border-radius: 100%;}
+#pauseBtn:hover{background-color: rgb(192, 192, 192);}
+
+#volumeBar{margin-left: 350px;
+width: 45%;}
+
+#counter{
+    background-color:rgb(255, 255, 255) ;
+    border-radius: 7px;
+    border: 1px solid black;
+    position: absolute;
+    width: fit-content;
+    padding: 3px;
+    top: 65.5%;
+    left: 40%;    
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.loopActive{ background-color:rgb(177, 177, 177);
+    border: 1px solid blue;}
