@@ -16,7 +16,7 @@ let n1= 0;
 let sp = 0;
 
 
-const playAudio = () =>{ progressLoop();
+const playAudio = () =>{
     audio.play();
     playBtn.classList.add('hide');pauseBtn.classList.remove('hide');
 }
@@ -77,7 +77,7 @@ function progressLoop() {
       timer.innerHTML = convertTime(audio.currentTime) + " / " + convertTime(audioD);
     });
   }
-
+  progressLoop();
  
 
     function convertTime(x){    
