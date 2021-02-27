@@ -16,18 +16,18 @@ let n1= 0;
 let sp = 0;
 
 
-const playAudio = () =>{
-    audio.play();
+const playAudio = () =>{audio.play();
+    progressLoop();
     playBtn.classList.add('hide');pauseBtn.classList.remove('hide');
 }
 
-const pauseAudio = () =>{
+const pauseAudio = () =>{Stopinterval();
     audio.pause();
     pauseBtn.classList.add('hide');playBtn.classList.remove('hide');
 }
 
-const fwrd15Btn = () => {audio.currentTime+=15}
-const bckrd15Btn = () => {audio.currentTime-=15}
+const fwrd15Btn = () => {audio.currentTime+=15;progresLoops()}
+const bckrd15Btn = () => {audio.currentTime-=15;progresLoops()}
 
 const bckrdBtn = () => {if(sp<20){audio.playbackRate += 0.1; counterAdd()}}
 const fwrdBtn = () => {if(sp>-9){audio.playbackRate -= 0.1; counterMinus()}}
@@ -60,9 +60,9 @@ const changeVolume = () =>{
 
 const stopBtn = () => {
     audio.currentTime = 0;
-    audio.pause(); pauseBtn.classList.add('hide');playBtn.classList.remove('hide');
-    sp = 0; counter.classList.add('hide'); audio.playbackRate = 1;n1 = 0; 
-    audio.removeAttribute('loop'); loop.classList.remove('loopActive')
+    progresLoops();
+    sp = 0; counter.classList.add('hide'); audio.playbackRate = 1;
+    pauseAudio();
 }
 
 const loopBtn = () => {
@@ -71,14 +71,21 @@ const loopBtn = () => {
         else {n1 = 0; audio.removeAttribute('loop'); loop.classList.remove('loopActive')}
 }
 
+let intrval;
+
 function progressLoop() {
-    setInterval(function () {
-      progress.value = (Math.round((audio.currentTime / audio.duration) * 100));
-      timer.innerHTML = convertTime(audio.currentTime) + " / " + convertTime(audioD);
-    });
+    intrval = setInterval(progresLoops, 500);
   }
-  progressLoop();
- 
+
+
+
+  function  progresLoops () {
+    progress.value = (Math.round((audio.currentTime / audio.duration) * 100));
+    timer.innerHTML = convertTime(audio.currentTime) + " / " + convertTime(audio.duration);
+    console.log('interval')
+  }
+
+  function Stopinterval(){clearInterval(intrval);console.log('stop')}
 
     function convertTime(x){    
       let mins = Math.floor(x / 60);
@@ -88,3 +95,8 @@ function progressLoop() {
   
       return mins + ':' + secs;
   }
+
+  function onloadFunction () {
+  timer.innerHTML = '00:00' + " / " + convertTime(audio.duration);
+}
+

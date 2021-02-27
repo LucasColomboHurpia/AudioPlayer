@@ -10,7 +10,7 @@
 </head>
 
 
-<body id='body'>
+<body id='body' onload='onloadFunction()'>
 <br><br>
     <audio id='audio'>
         <source src="./audio/Celtic Music - For the King.mp3" type="audio/mp3">
@@ -21,7 +21,7 @@
     <img id="pauseBtn" class=' hide' onclick="pauseAudio()" src="./icons/iconfinder_btn_Pause_4719317.png">
     <div style="display: inline;">
         <label id="timer" class="center" for="progress" role="timer"></label>
-        <progress id="progress"  class="center" max="100" value="1">Progress</progress>
+        <progress id="progress"  class="center" max="100" value="0">Progress</progress>
     </div>
         <img id='volumeBtn' class='btn' onclick='showVolume()' src="./icons/songIcon/iconfinder_btn_Volume_100_4698930.png">
         <img id='fwrd15' class='btn' onclick='bckrd15Btn()' src="./icons/iconfinder_btn_15_Forward_4719305.png">
