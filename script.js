@@ -75,10 +75,7 @@ let intrval;
 
 function progressLoop() {
     intrval = setInterval(progresLoops, 500);
-  }
-
-
-
+  }  function onloadFunction () {timer.innerHTML = '00:00' + " / " + '03:29';}
   function  progresLoops () {
     progress.value = (Math.round((audio.currentTime / audio.duration) * 100));
     timer.innerHTML = convertTime(audio.currentTime) + " / " + convertTime(audio.duration);
@@ -96,7 +93,5 @@ function progressLoop() {
       return mins + ':' + secs;
   }
 
-  function onloadFunction () {
-  timer.innerHTML = '00:00' + " / " + convertTime(audio.duration);
-}
+
 
